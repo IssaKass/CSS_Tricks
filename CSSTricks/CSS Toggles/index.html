@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6a58196ab8.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="box lampBox">
+        <div class="toggle">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox">
+                <div class="lamp"></div>
+            </label>
+        </div>
+        <div class="name lampName">Light</div>
+    </div>
+
+    <div class="box neumorphism">
+        <div class="toggle">
+            <input type="checkbox" id="checkbox2">
+            <label for="checkbox2"></label>
+            <div class="name neumorphismName">Neumorphism</div>
+        </div>
+    </div>
+
+    <div class="box circleSquare">
+        <div class="toggle">
+            <input type="checkbox" id="checkbox3">
+            <label for="checkbox3"></label>
+            <div class="name circleSquareName">Circle & Square</div>
+        </div>
+    </div>
+
+    <div class="box dayNight">
+        <div class="toggle">
+            <input type="checkbox" id="checkbox4">
+            <label for="checkbox4">
+                <div class="sunBox">
+                    <div class="sun" style="--i:1;"></div>
+                    <div class="sun" style="--i:2;"></div>
+                    <div class="sun" style="--i:3;"></div>
+                    <div class="sun" style="--i:4;"></div>
+                    <div class="sun" style="--i:5;"></div>
+                    <div class="sun" style="--i:6;"></div>
+                    <div class="sun" style="--i:7;"></div>
+                    <div class="sun" style="--i:8;"></div>
+                </div>
+                <div class="moon"></div>
+            </label>
+            <div class="name dayNightName">
+                <span>Day</span>
+                <span>Night</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="box yesNo">
+        <div class="toggle">
+            <input type="checkbox" id="checkbox5">
+            <label for="checkbox5">
+                <span class="tap"></span>
+            </label>
+            <div class="name yesNoName">
+                Yes No
+            </div>
+        </div>
+    </div>
+
+    <div class="box bear">
+        <div class="toggle">
+            <input type="checkbox" id="checkbox6">
+            <label for="checkbox6">
+                <span class="handler"></span>
+            </label>
+            <div class="bear-body">
+                <span class="ear"></span>
+                <span class="eye-left"></span>
+                <span class="eye-right"></span>
+            </div>
+            <div class="name bearName">
+                Bear
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let dayColor=document.querySelector(".dayNight");
+        let toggle=document.getElementById("checkbox4");
+        toggle.onclick=function(){
+            dayColor.classList.toggle("nightColor");
+        }
+
+        let toggle5=document.getElementById("checkbox5");
+        let yesNoColor=document.querySelector(".yesNo");
+        toggle5.onclick=function(){
+            yesNoColor.classList.toggle("noColor");
+        }
+    </script>
+
+</body>
+</html>

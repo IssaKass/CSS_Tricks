@@ -1,0 +1,70 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+ul {
+	position: relative;
+	display: flex;
+}
+ul li {
+	list-style: none;
+	position: relative;
+}
+ul li a {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	text-decoration: none;
+	margin: 0 10px;
+	background-color: #fff;
+	box-shadow: inset -1px -1px 2px rgba(0 0 0 / 20%),
+		2px 2px 5px rgba(0 0 0 / 20%);
+	font-size: 22px;
+	transition: 0.5s;
+}
+ul li a:hover {
+	color: #777;
+	transform: translateY(-20px);
+	box-shadow: inset -1px -1px 2px rgba(0 0 0 / 20%),
+		2px 24px 10px rgba(0 0 0 / 10%);
+}
+ul li a::before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	top: 10px;
+	right: 10px;
+	bottom: 10px;
+	left: 10px;
+}
+ul li a .fab {
+	position: relative;
+	z-index: 1;
+	color: #fff;
+}
+ul li:nth-child(1) a::before {
+	background-color: #1877f2;
+}
+ul li:nth-child(2) a::before {
+	background-color: #1da1f2;
+}
+ul li:nth-child(3) a::before {
+	background-color: #25d366;
+}
+ul li:nth-child(4) a::before {
+	background-color: #c32aa3;
+}
+ul li:nth-child(5) a::before {
+	background-color: #ea4c89;
+}

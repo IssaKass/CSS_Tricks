@@ -1,0 +1,511 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	scroll-snap-align: start;
+}
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: flex-end;
+	align-content: flex-start;
+	flex-wrap: wrap;
+	transform-style: preserve-3d;
+}
+.box {
+	flex: 1 1 calc(100% / 3);
+	height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+}
+.name {
+	position: absolute;
+	right: 30px;
+	bottom: 30px;
+	font-size: 30px;
+}
+/* Start Light */
+.name.lampName {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: #fff;
+	text-shadow: 0 0 10px #4cc3e2, 0 0 20px #4cc3e2, 0 0 30px #4cc3e2;
+}
+.box.lampBox {
+	background-color: #1a2031;
+}
+.toggle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+}
+.toggle input[type="checkbox"] {
+	appearance: none;
+}
+.lampBox .toggle label {
+	width: 240px;
+	height: 100px;
+	background: #3c3459;
+	display: block;
+	border-radius: 50px;
+	position: relative;
+	cursor: pointer;
+}
+.lampBox .toggle label::before {
+	content: "";
+	position: absolute;
+	width: 86px;
+	height: 86px;
+	border-radius: 50%;
+	background-color: #827d96;
+	left: 7px;
+	top: 7px;
+	transition: transform 1s ease-in-out, background-color 0.5s,
+		box-shadow 0.7s 0.3s ease-out;
+}
+.lampBox .toggle input[type="checkbox"]:checked + label::before {
+	transform: translateX(140px);
+	background-color: #e3f3f7;
+	box-shadow: 0 0 80px #4cc3e2, 0 0 100px #4cc3e2, 0 0 140px #4cc3e2,
+		0 0 180px #4cc3e2;
+}
+.lampBox .toggle .lamp {
+	position: absolute;
+	background-color: rgba(60, 60, 60, 0.5);
+	width: 5px;
+	height: 100px;
+	left: 35px;
+	top: 90px;
+	z-index: -1;
+	transition: 0.3s;
+	animation: animate 2s linear infinite alternate;
+}
+@keyframes animate {
+	0% {
+		transform: rotate(5deg);
+		transform-origin: top center;
+	}
+	100% {
+		transform: rotate(-5deg);
+		transform-origin: top center;
+	}
+}
+.lampBox .toggle .lamp::after {
+	content: "";
+	position: absolute;
+	width: 34px;
+	height: 45px;
+	background-color: #827d96;
+	left: -14px;
+	top: 95px;
+	clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+	border-top-right-radius: 12px 25px;
+	border-top-left-radius: 12px 25px;
+	border-bottom-right-radius: 12px;
+	border-bottom-left-radius: 12px;
+	transition: 0.3s;
+}
+.lampBox .toggle input[type="checkbox"]:checked + label .lamp {
+	height: 120px;
+}
+.lampBox .toggle input[type="checkbox"]:checked + label .lamp::after {
+	top: 110px;
+}
+/* End Light */
+
+/* Start Neumorphism */
+.box.neumorphism {
+	background-color: #e3f3f7;
+}
+.neumorphism .toggle label {
+	width: 240px;
+	height: 100px;
+	background: transparent;
+	display: block;
+	border-radius: 50px;
+	position: relative;
+	cursor: pointer;
+	box-shadow: 4px 4px 10px rgba(0 0 0 / 5%),
+		-4px -4px 10px rgba(255 255 255 / 45%), inset 4px 4px 6px rgba(0 0 0 / 5%),
+		inset 4px 4px 10px rgba(255 255 255 / 45%),
+		inset -4px -4px 6px rgba(255 255 255 / 45%),
+		inset -4px -4px 10px rgba(0 0 0 / 5%);
+}
+.neumorphism .toggle label::before {
+	content: "";
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	background-color: #e3f3f7;
+	border-radius: 50%;
+	left: 10px;
+	top: 10px;
+	box-shadow: 3px 3px 6px rgba(0 0 0 / 5%),
+		-3px -3px 6px rgba(255 255 255 / 45%), inset 0 0 20px 1px rgba(0 0 0 / 5%),
+		inset 3px 3px 6px rgba(255 255 255 / 45%),
+		inset -3px -3px 6px rgba(0 0 0 / 5%);
+	z-index: 100;
+	transition: 1s;
+}
+.neumorphism .toggle label::after {
+	content: "";
+	position: absolute;
+	width: 200px;
+	height: 20px;
+	border-radius: 20px;
+	left: 20px;
+	top: 40px;
+	box-shadow: 4px 4px 10px rgba(0 0 0 / 5%),
+		-4px -4px 10px rgba(255 255 255 / 45%), inset 4px 4px 6px rgba(0 0 0 / 5%),
+		inset 4px 4px 10px rgba(255 255 255 / 45%),
+		inset -4px -4px 6px rgba(255 255 255 / 45%),
+		inset -4px -4px 10px rgba(0 0 0 / 5%);
+	z-index: 1;
+	transition: 1s;
+}
+.neumorphism input:checked + label::before {
+	transform: translateX(140px);
+}
+.name.neumorphismName {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	text-align: center;
+	letter-spacing: 3px;
+	width: fit-content;
+	right: 50%;
+	transform: translate(50%);
+	font-weight: bold;
+	text-transform: uppercase;
+	color: rgba(0 0 0 / 25%);
+	padding: 10px 20px;
+	font-size: 24px;
+	border-radius: 10px;
+	box-shadow: 3px 3px 5px rgba(0 0 0 / 5%),
+		-3px -3px 5px rgba(255 255 255 / 45%), inset 3px 3px 5px rgba(0 0 0 / 5%),
+		inset -3px -3px 5px rgba(255 255 255 / 45%);
+}
+/* End Neumorphism */
+
+/* Start Circle Square */
+.box.circleSquare {
+	background-color: #222;
+}
+.circleSquare .toggle label {
+	width: 270px;
+	height: 100px;
+	background: transparent;
+	display: block;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+	position: relative;
+	cursor: pointer;
+	background-color: transparent;
+	border: 3px solid rgb(175, 94, 64);
+	box-shadow: 2px 2px 5px 0 rgba(0 0 0 / 12%);
+}
+.circleSquare .toggle label::before {
+	content: "";
+	position: absolute;
+	width: 74px;
+	height: 74px;
+	left: 10px;
+	top: 10px;
+	transition: 1s;
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px rgba(0 0 0 / 10%), -2px -2px 4px rgba(30 30 30 / 10%);
+	background-color: rgb(175, 94, 64);
+}
+.circleSquare input:checked + label::before {
+	transform: translateX(170px) rotate(1turn);
+	border-radius: 50%;
+}
+
+.name.circleSquareName {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	letter-spacing: 3px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: rgb(175, 94, 64);
+	font-size: 24px;
+}
+/* Start Circle Square */
+
+/* Start Day Night */
+.box.dayNight {
+	background-color: lightblue;
+	transition: 2s ease-out;
+}
+.box.dayNight.nightColor {
+	background-color: #171d20;
+}
+.dayNight .toggle label {
+	width: 200px;
+	height: 80px;
+	background: transparent;
+	display: block;
+	border-radius: 50px;
+	position: relative;
+	cursor: pointer;
+	background-color: #03a5f366;
+	transition: 2s;
+}
+.dayNight .toggle label .sun {
+	content: "";
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 20px;
+	top: 20px;
+	border-radius: 50%;
+	background-color: #ebeb00;
+	transform: rotate(calc(var(--i) * 45deg));
+	transition: 2s;
+}
+.dayNight .toggle label .sun::before {
+	content: "";
+	position: absolute;
+	top: -6px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 8px;
+	height: 8px;
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+	background-color: inherit;
+	border-radius: 10px;
+}
+.dayNight label .sunBox {
+	transition: 2s;
+}
+.dayNight input:checked + label .sunBox {
+	transform: rotate(1turn);
+}
+.dayNight input:checked + label .sun {
+	transform: translateX(120px) translateY(-16px) scale(0.3)
+		rotate(calc(var(--i) * 45deg));
+}
+.dayNight input:checked + label {
+	background-color: #33333366;
+}
+.dayNight label .moon {
+	position: absolute;
+	right: 20px;
+	top: 14px;
+	width: 40px;
+	height: 40px;
+	box-shadow: -6px 6px 0 3px transparent;
+	transform: translateY(65px) rotate(-90deg);
+	overflow: hidden;
+	border-radius: 50%;
+	transition: transform 2s, box-shadow 2s ease-in-out;
+}
+.dayNight input:checked + label .moon {
+	transform: translateY(0) rotate(-67deg);
+	box-shadow: -6px 6px 0 3px #fff;
+}
+.name.dayNightName {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	letter-spacing: 1px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 24px;
+	word-spacing: 5px;
+	background: rgba(0 0 0 / 10%);
+	padding: 5px 20px;
+	border-radius: 50px;
+}
+.name.dayNightName span:first-child {
+	color: #fbff00;
+}
+.name.dayNightName span:last-child {
+	color: #fff;
+}
+/* End Day Night */
+
+/* Start Yes No */
+.box.yesNo {
+	background-color: #9ed38e;
+	transition: 1.5s;
+}
+.box.yesNo.noColor {
+	background-color: #d38e8e;
+}
+.yesNo .toggle label {
+	width: 140px;
+	height: 50px;
+	background: transparent;
+	display: block;
+	border-radius: 50px;
+	position: relative;
+	cursor: pointer;
+	background-color: #fff;
+	transition: 0.75s;
+}
+.yesNo .toggle label .tap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	content: "\f00c";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 5px;
+	top: 5px;
+	border-radius: 50%;
+	background-color: #6ad14a;
+	transition: background-color 0.75s, transform 0.75s 0.75s;
+}
+.yesNo .toggle label .tap::before {
+	content: "\f00c";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 20px;
+	color: #fff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.yesNo input:checked + label {
+	transform: rotate(30deg);
+}
+.yesNo input:checked + label .tap {
+	transform: translateX(90px) rotate(1turn);
+	background-color: #d14a4a;
+}
+.yesNo input:checked + label .tap::before {
+	content: "\f00d";
+}
+.name.yesNoName {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	letter-spacing: 1px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 24px;
+	word-spacing: 5px;
+	border-radius: 50px;
+	color: rgb(60, 60, 60);
+}
+/* End Yes No */
+
+/* Start Bear */
+.box.bear {
+	background-color: #7994a5;
+}
+.bear .toggle label {
+	width: 100px;
+	height: 50px;
+	background: transparent;
+	display: block;
+	border-radius: 50px;
+	position: relative;
+	cursor: pointer;
+	background-color: #dcc8a3;
+	transform: translateY(-14px);
+}
+.bear .toggle label .handler {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 5px;
+	top: 5px;
+	border-radius: 50%;
+	background-color: #7e2804;
+	transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.bear input:checked + label .handler {
+	transform: translateX(50px);
+}
+.bear .bear-body {
+	position: absolute;
+	width: 140px;
+	z-index: -1;
+	border-bottom: 160px solid #7e2804;
+	border-left: 21px solid transparent;
+	border-right: 12px solid transparent;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+}
+.bear input:checked ~ .bear-body {
+	transform: translate(-50%, -50%) rotateY(180deg);
+}
+.bear .bear-body .ear {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background-color: #7e2804;
+	top: -16px;
+	left: -7px;
+	box-shadow: 100px 0 0 #7e2804;
+}
+.bear .bear-body .ear::before {
+	content: "";
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	bottom: 5px;
+	right: 5px;
+	border-radius: 50%;
+	background-color: #dcc8a3;
+	box-shadow: 100px 0 0 #dcc8a3;
+}
+.bear .bear-body .eye-left,
+.bear .bear-body .eye-right {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: #3d2526;
+	position: absolute;
+}
+.bear .bear-body .eye-left {
+	top: 19px;
+	left: 24px;
+	animation: blink 3s ease-in-out infinite;
+}
+.bear .bear-body .eye-right {
+	top: 19px;
+	left: 56px;
+	animation: blink 3.5s ease-in-out infinite;
+}
+.bear .bear-body .eye-left::before,
+.bear .bear-body .eye-right::before {
+	content: "";
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: #fff;
+	left: 2px;
+	top: 5.5px;
+}
+@keyframes blink {
+	85% {
+		transform: rotateX(0);
+	}
+	90% {
+		transform: rotateX(90deg);
+	}
+}
+.name.bearName {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	letter-spacing: 1px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 24px;
+	word-spacing: 5px;
+	border-radius: 50px;
+	color: #7e2804;
+	text-shadow: 0 0 20px #7e2804;
+}
+/* End Bear */

@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	border: none;
+	outline: none;
+}
+:root {
+	--color1: #8c83d6;
+	--color2: #ada8e8;
+	--color3: #7a75b7;
+	--color4: #6d63ac;
+	--color5: #6058a3;
+}
+body {
+	font-family: "Radio Canada", sans-serif;
+	background: linear-gradient(45deg, #ada8e8, #8c83d6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+}
+.form {
+	opacity: 0;
+	transform: translateY(-30px);
+	position: relative;
+	overflow: hidden;
+	height: 600px;
+	width: 400px;
+	background: linear-gradient(
+		to left,
+		var(--color4),
+		var(--color3),
+		var(--color5)
+	);
+	border-radius: 5px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px 0 rgba(0, 0, 0, 0.08);
+	transition: all 1000ms ease;
+}
+.form.shown {
+	opacity: 1;
+	transform: translateY(0);
+}
+.form:hover {
+	transform: scale(1.05);
+}
+@media (max-width: 767px) {
+	.form {
+		height: 500px;
+		width: calc(1000px / 3);
+	}
+}
+.background {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+.bg {
+	position: absolute;
+	transform: rotate(45deg);
+}
+.bg_1 {
+	width: 120%;
+	height: 100%;
+	top: -10%;
+	left: -63%;
+	background-color: #fff;
+	border-radius: 80px;
+	z-index: 10;
+}
+.bg_2 {
+	width: 50%;
+	height: 45%;
+	right: -5%;
+	top: -33%;
+	background-color: var(--color5);
+	border-radius: 40px;
+	z-index: 5;
+}
+.bg_3 {
+	width: 50%;
+	height: 90%;
+	right: -10%;
+	top: -5%;
+	background: linear-gradient(var(--color4), var(--color5));
+	border-radius: 40px;
+	z-index: 2;
+}
+.bg_4 {
+	width: 50%;
+	height: 60%;
+	left: 40%;
+	bottom: -37%;
+	background: var(--color3);
+	border-radius: 40px;
+	z-index: 2;
+}
+form {
+	position: relative;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	padding: 30px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.input__box {
+	margin: 15px 0;
+	position: relative;
+}
+.input__box .fa {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	color: var(--color5);
+}
+input:not([type="submit"]) {
+	padding: 10px 5px 10px 30px;
+	border-bottom: 2px solid #6058a333;
+	caret-color: var(--color5);
+	background-color: transparent;
+	color: #555;
+	letter-spacing: 1px;
+	transition: 300ms ease;
+}
+input:not([type="submit"]):hover,
+input:not([type="submit"]):focus {
+	border-color: var(--color5);
+}
+input[type="submit"] {
+	padding: 15px;
+	text-align: left;
+	width: 80%;
+	background-color: #fff;
+	box-shadow: 3px 3px 5px #6058a344, -2px -2px 4px #7a75b766;
+	border-radius: 10px;
+	text-transform: uppercase;
+	color: #6058a3aa;
+	font-weight: 700;
+	position: relative;
+	cursor: pointer;
+	transition: 300ms ease all;
+}
+input[type="submit"] + span {
+	position: absolute;
+	top: 50%;
+	right: calc(20% + 25px);
+	transform: translateY(-50%);
+	transition: 300ms ease all;
+}
+input[type="submit"] + span .fa {
+	color: #6058a3aa;
+}
+input[type="submit"]:hover,
+input[type="submit"]:hover + span .fa {
+	color: #6058a3;
+}
+.social {
+	width: fit-content;
+	position: absolute;
+	bottom: 8%;
+	right: 10.3%;
+}
+@media (max-width: 767px) {
+	.social {
+		bottom: 5%;
+		right: 8%;
+	}
+}
+.social h3 {
+	color: #fff;
+	margin-bottom: 14px;
+}
+.social ul {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+}
+a .fab {
+	color: #fff;
+	transition: 300ms all ease;
+}
+a .fab:hover {
+	opacity: 0.5;
+}

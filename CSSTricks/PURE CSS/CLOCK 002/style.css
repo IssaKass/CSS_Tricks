@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	pointer-events: none;
+}
+body {
+	min-height: 100vh;
+	background: url(bg.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+	font-family: "Roboto", sans-serif;
+}
+.container {
+	position: absolute;
+	left: 80px;
+	right: 80px;
+	top: 80px;
+	bottom: 80px;
+	background: rgba(0, 0, 0, 0.1);
+	border: 6px solid rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+	backdrop-filter: blur(5px);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	box-shadow: 0 0 0 120px rgba(0, 0, 0, 0.1), 0 0 50px 50px rgba(0, 0, 0, 0.3);
+}
+.container h1 {
+	margin-top: -80px;
+	font-size: 80px;
+	font-family: "Gloria Hallelujah", cursive;
+	letter-spacing: 10px;
+	word-spacing: -10px;
+	color: #fff;
+	text-align: center;
+	text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3),
+		-3px -3px 10px rgba(0, 0, 0, 0.1);
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke: 0.2px #fff;
+}
+@media (max-width: 1199px) {
+	.container h1 {
+		font-size: 60px;
+	}
+}
+@media (max-width: 991px) {
+	.container h1 {
+		font-size: 44px;
+		margin-top: 0;
+	}
+}
+.container .countdown {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.container .countdown .box {
+	margin: 10px 15px;
+	width: 120px;
+	height: 160px;
+	border-radius: 10px;
+	position: relative;
+	box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1),
+		-4px -4px 5px rgba(255, 255, 255, 0.1);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+}
+@media (max-width: 991px) {
+	.container .countdown .box {
+		width: 160px;
+		height: 200px;
+	}
+}
+.container .box .time {
+	width: 100%;
+	height: 120px;
+	display: grid;
+	place-items: center;
+	font-size: 50px;
+	color: #fff;
+	letter-spacing: 4px;
+}
+@media (max-width: 991px) {
+	.container .box .time {
+		height: 160px;
+	}
+}
+.container .box .text {
+	width: 100%;
+	flex: 1;
+	display: grid;
+	place-items: center;
+	font-size: 16px;
+	font-weight: 100;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	color: #fff;
+	box-shadow: 0 1px 5px rgba(255, 255, 255, 0.5);
+}

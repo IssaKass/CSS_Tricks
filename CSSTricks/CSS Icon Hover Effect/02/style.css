@@ -1,0 +1,51 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+ul li {
+	list-style: none;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 5px solid #359ffa;
+	margin: 0 15px;
+    font-size: 36px;
+    color: #359ffa;
+    position: relative;
+    transition: 0.5s;
+}
+ul li .fas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: 0.5s;
+}
+ul li .fas:nth-child(1) {
+    left: -50%;
+    opacity: 0;
+}
+ul li:hover {
+    background-color: #359ffa;
+    color: #fff;
+}
+ul li:hover .fas:nth-child(1) {
+    left: 50%;
+    opacity: 1;
+}
+ul li:hover .fas:nth-child(2) {
+    left: 150%;
+    opacity: 0;
+}

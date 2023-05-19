@@ -1,0 +1,55 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #000;
+}
+ul {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+}
+ul li {
+	position: relative;
+	list-style: none;
+	margin: 0 40px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+ul li::before {
+	font-family: fontAwesome;
+	font-size: 80px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 0;
+	border-bottom: 4px solid;
+	transition: 0.5s ease-in-out;
+	overflow: hidden;
+}
+ul li:nth-child(1):before {
+	content: "\f099";
+	color: #1da1f2;
+	border-color: #1da1f2;
+}
+ul li:nth-child(2):before {
+	content: "\f232";
+	color: #25d366;
+	border-color: #25d366;
+}
+ul li:nth-child(3):before {
+	content: "\f167";
+	color: #ff0000;
+	border-color: #ff0000;
+}
+ul li .fab {
+	font-size: 80px;
+	color: #333;
+	transition: 0.5s;
+}
+ul li:hover::before {
+	height: 100%;
+}
