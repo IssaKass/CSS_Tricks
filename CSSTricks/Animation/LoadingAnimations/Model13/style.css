@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #040404;
+}
+.loading {
+  font-family: sans-serif;
+  font-size: 2rem;
+  color: white;
+}
+.loading span {
+  margin: 0 0.2em;
+  animation: blur-text 1.5s linear infinite alternate;
+  animation-delay: calc(0.2s * var(--i));
+}
+@keyframes blur-text {
+  to {
+    filter: blur(4px);
+  }
+}

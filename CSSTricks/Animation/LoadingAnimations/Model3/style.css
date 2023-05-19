@@ -1,0 +1,50 @@
+:root {
+    --main-color: #983a3a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square {
+    width: 3em;
+    height: 3em;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin-animation 1.25s ease-in-out infinite;
+}
+
+.hole {
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    animation: hole-animation 1.25s ease-in-out infinite alternate;
+}
+
+@keyframes spin-animation {
+    to {
+        transform: rotate(0.25turn);
+    }
+}
+
+@keyframes hole-animation {
+    from {
+        transform: scale(0.25);
+    }
+
+    to {
+        transform: scale(0.75);
+    }
+}

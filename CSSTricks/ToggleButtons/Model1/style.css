@@ -1,0 +1,49 @@
+:root {
+    --toggle-width: 6em;
+    --toggle-height: 3em;
+    --toggle-circle-size: calc(0.8 * var(--toggle-height));
+    --toggle-circle-offset: calc(0.1 * var(--toggle-height));
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    width: var(--toggle-width);
+    height: var(--toggle-height);
+    background-color: #ccc;
+    border-radius: calc(0.5 * var(--toggle-width));
+    cursor: pointer;
+    position: relative;
+}
+
+label::before {
+    content: '';
+    position: absolute;
+    width: var(--toggle-circle-size);
+    height: var(--toggle-circle-size);
+    background-color: #fff;
+    border-radius: 50%;
+    top: var(--toggle-circle-offset);
+    left: var(--toggle-circle-offset);
+    transition: all 0.3s ease;
+}
+
+input[type=checkbox]:checked+label::before {
+    left: calc(var(--toggle-width) - var(--toggle-circle-size) - var(--toggle-circle-offset));
+}

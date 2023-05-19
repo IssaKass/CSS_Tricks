@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-size: 40px;
+    font-weight: 800;
+    position: relative;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 217, 102);
+    transform-origin: right;
+    transform: scaleX(0);
+    z-index: -1;
+    transition: transform 0.5s ease-in-out;
+}
+
+a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}

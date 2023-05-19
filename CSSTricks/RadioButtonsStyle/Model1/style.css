@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+:root {
+    --main-color: #2d7acb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+}
+
+.wrapper {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 5px;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper label {
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: inherit;
+    margin: 0 10px;
+    border: 2px solid lightgray;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.wrapper label .dot {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: lightgray;
+    border-radius: 50%;
+}
+
+.wrapper label .text {
+    transition: all 300ms ease;
+    color: gray;
+}
+
+.wrapper label .dot::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: 4px;
+    top: 4px;
+    background-color: var(--main-color);
+    border-radius: inherit;
+    transform: scale(1.5);
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.wrapper input:checked+label {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.wrapper input:checked+label .dot::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.wrapper input:checked+label .text {
+    color: white
+}

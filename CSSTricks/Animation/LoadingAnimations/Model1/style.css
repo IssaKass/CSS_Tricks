@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.loader {
+    display: flex;
+}
+
+.loader .dot {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 10px;
+    background-color: #ff6f6f;
+    box-shadow:
+        0 0 10px #ff6f6f,
+        0 0 20px #ff6f6f,
+        0 0 40px #ff6f6f,
+        0 0 60px #ff6f6f,
+        0 0 100px #ff6f6f;
+    animation: dot-animation 2s linear infinite;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+@keyframes dot-animation {
+    0% {
+        transform: scale(0.1);
+    }
+
+    10% {
+        transform: scale(1);
+    }
+
+    50%,
+    100% {
+        transform: scale(0.1);
+    }
+}

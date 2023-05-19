@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --w: 300px;
+    --h: 100px;
+    --m-color: rgb(233, 106, 216);
+}
+
+body {
+    background: #f9f9f9;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, sans-serif;
+    user-select: none;
+}
+
+div {
+    width: var(--w);
+    height: var(--h);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: normal;
+    cursor: pointer;
+    position: relative;
+}
+
+div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--m-color);
+    box-shadow: 0px calc(var(--h) - 4px) var(--m-color);
+    transition: 300ms ease;
+}
+
+div::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--m-color);
+    box-shadow: calc(var(--w) - 4px) 0px var(--m-color);
+    transition: 300ms ease;
+}
+
+div:hover::before {
+    top: -8px;
+    box-shadow: 0px calc(var(--h) - 4px + 16px) var(--m-color);
+    border-radius: 4px;
+}
+
+div:hover::after {
+    left: -8px;
+    box-shadow: calc(var(--w) - 4px + 16px) 0px var(--m-color);
+    border-radius: 4px;
+}

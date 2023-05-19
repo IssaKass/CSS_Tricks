@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+section {
+  height: 100vh;
+  background: hsl(0 0% 5%);
+  display: grid;
+  place-items: center;
+  animation: hue-animation 50s linear infinite;
+}
+.loading {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+.loading span {
+  position: absolute;
+  width: 8px;
+  height: 25px;
+  border-radius: 8px;
+  background: hsl(0 0% 10%);
+  transform: rotate(calc(18deg * var(--i)));
+  left: 50%;
+  transform-origin: 0 125px;
+  animation: load 1.9s ease-in-out infinite;
+  animation-delay: calc(0.05s * var(--i));
+}
+@keyframes load {
+  0% {
+    background-color: hsl(0 0% 10%);
+    box-shadow: none;
+  }
+  50% {
+    background-color: hsl(200 50% 35%);
+    box-shadow: 0 0 5px hsl(200 50% 35%), 0 0 15px hsl(200 50% 35%),
+      0 0 30px hsl(200 50% 35%), 0 0 60px hsl(200 50% 35%);
+  }
+}

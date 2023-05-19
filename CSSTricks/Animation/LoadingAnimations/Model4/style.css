@@ -1,0 +1,68 @@
+:root {
+    --main-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 5px solid var(--main-color);
+    position: relative;
+    -webkit-animation: load 3s linear infinite;
+    -moz-animation: load 3s linear infinite;
+    -o-animation: load 3s linear infinite;
+    -ms-animation: load 3s linear infinite;
+    animation: load 3s linear infinite;
+}
+
+.circle::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+}
+
+@-webkit-keyframes load {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@-moz-keyframes load {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@-o-keyframes load {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@-ms-keyframes load {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes load {
+    to {
+        transform: rotate(1turn);
+    }
+}

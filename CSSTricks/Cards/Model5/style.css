@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    --purple: rgb(114, 50, 162);
+    --lt-gray: #777;
+    --gray: #282828;
+    --transition: 300ms ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e9f3f1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.container {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 300px;
+    margin: 30px 20px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+}
+
+.card:hover {
+    background-color: var(--purple);
+    transform: scale(1.05);
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    color: var(--gray);
+    font-size: 3em;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.card:hover h2 {
+    color: #fff;
+}
+
+.card hr {
+    width: 80%;
+    height: 1px;
+    background-color: var(--purple);
+    border: none;
+    margin: 5px 0 10px;
+    transition: var(--transition);
+}
+
+.card:hover hr {
+    background-color: #fff;
+}
+
+.card h4 {
+    color: var(--lt-gray);
+    font-size: 0.9em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.card:hover h4 {
+    color: #fff;
+}
+
+.card p {
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: var(--transition);
+}
+
+.card:hover p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--purple);
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.card:hover a {
+    color: #fff;
+}

@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e27f76;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.loader {
+    display: flex;
+    flex-flow: row wrap;
+    width: 6em;
+    height: 6em;
+}
+
+.loader .square {
+    width: 50%;
+    height: 50%;
+    background-color: #fff;
+    -webkit-animation: animate var(--timing) infinite ease-in-out;
+    animation: animate 1.8s infinite ease-in-out;
+}
+
+.loader .square:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.loader .square:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.loader .square:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.loader .square:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 1;
+    }
+
+    40%,
+    50% {
+        opacity: 0;
+    }
+
+    90%,
+    100% {
+        opacity: 1;
+    }
+}

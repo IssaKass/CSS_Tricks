@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #57a5ef;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.loading {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #417db5;
+    border-left-color: #fff;
+    animation: spin 1s linear infinite;
+    -o-animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+}
+
+@-o-keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@-moz-keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(1turn);
+    }
+}
